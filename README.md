@@ -1,6 +1,6 @@
 # CR Fideliza
 
-> Sistema de fidelización con tarjeta virtual para restaurantes y bares. Tus clientes guardan la tarjeta directamente en Apple Wallet o Google Wallet — sin apps, sin tarjetas físicas.
+> Programa de fidelización digital para comercios, profesionales y negocios de servicios. Tus clientes guardan su tarjeta directamente en Apple Wallet o Google Wallet — sin apps, sin tarjetas físicas.
 
 [![Estado](https://img.shields.io/badge/estado-activo-brightgreen)]()
 [![Hecho en](https://img.shields.io/badge/hecho%20en-Paraguay-blue)]()
@@ -18,7 +18,7 @@
 
 ## ✨ ¿Qué es CR Fideliza?
 
-CR Fideliza es una plataforma de fidelización de clientes diseñada específicamente para **restaurantes, bares, cafeterías y food trucks**.
+CR Fideliza ayuda a los negocios a convertir clientes ocasionales en clientes recurrentes mediante programas de fidelización digitales, simples y personalizados.
 
 A diferencia de las tarjetas de fidelidad tradicionales, CR Fideliza usa **tarjetas virtuales** que los clientes guardan en su teléfono (Apple Wallet / Google Wallet), eliminando la fricción de las tarjetas físicas y las apps descargables.
 
@@ -27,15 +27,15 @@ A diferencia de las tarjetas de fidelidad tradicionales, CR Fideliza usa **tarje
 - ❌ Los clientes pierden las tarjetas físicas de sellos.
 - ❌ Las apps de fidelización tienen tasas de descarga muy bajas.
 - ❌ Los sistemas POS tradicionales no ofrecen fidelización integrada.
-- ❌ Los dueños de bares no tienen datos de sus clientes habituales.
+- ❌ Los negocios no tienen datos de sus clientes habituales.
 
 ### La solución
 
-- ✅ Tarjeta virtual en 2 toques, sin app.
-- ✅ Sellos, puntos o cashback automáticos.
-- ✅ Notificaciones push segmentadas.
-- ✅ Panel de control con estadísticas en tiempo real.
-- ✅ Compatible con cualquier POS.
+- ✅ Tarjeta digital en 2 toques, sin app.
+- ✅ Premios por visitas, puntos y recompensas configurables.
+- ✅ Programa de fidelización adaptado a cada negocio.
+- ✅ Experiencia simple para el negocio y para el cliente.
+- ✅ Implementación sin tarjetas físicas.
 
 ---
 
@@ -43,20 +43,25 @@ A diferencia de las tarjetas de fidelidad tradicionales, CR Fideliza usa **tarje
 
 | Función | Descripción |
 |---|---|
-| 📱 **Tarjeta virtual** | Apple Wallet / Google Wallet, sin descargar apps |
-| 🎯 **Sellos y puntos** | Configurá sellos por visita, puntos por consumo o cashback |
-| 🔔 **Notificaciones push** | Avisá de promociones, cumpleaños o sellos pendientes |
-| 📊 **Panel de control** | Visitas, frecuencia, ticket medio y clientes inactivos |
-| 💳 **Compatible con POS** | Funciona con cualquier sistema de caja registradora |
-| 🎁 **Recompensas flexibles** | Descuentos, productos gratis, 2x1 y más |
+| 📱 **Tarjetas digitales** | Apple Wallet / Google Wallet, sin descargar apps |
+| 🎯 **Premios por visitas** | Recompensas al alcanzar objetivos de visitas |
+| ✨ **Fidelización adaptada** | Programas alineados a tus productos, servicios y clientes |
+| 🤝 **Experiencia simple** | Acceso fácil para que más clientes participen |
+
+---
+
+## 🏪 Para todo tipo de negocio
+
+Barberías y peluquerías, lavaderos y detailing, tiendas y boutiques, cafeterías, restaurantes y bares, gimnasios, centros de estética, servicios técnicos y emprendimientos.
 
 ---
 
 ## 🚀 Cómo funciona
 
-1. **El cliente escanea** un código QR en la mesa o en la caja.
-2. **Suma sellos o puntos** automáticamente con cada compra.
-3. **Canjea la recompensa** al completar la tarjeta.
+1. **Configura tu programa**: definí cómo premiar y qué recompensa ofrecer.
+2. **Tus clientes se suman**: compárteles el acceso a su tarjeta digital.
+3. **Premia su fidelidad**: registrá sus visitas o compras.
+4. **Incentiva que regresen**: convertí las recompensas en un motivo para volver.
 
 ---
 
@@ -87,7 +92,7 @@ Sin frameworks, sin build, sin dependencias. Un solo archivo `index.html` autoco
 - 🌗 **Modo claro/oscuro** con persistencia en `localStorage`
 - 📱 **100% responsive** (móvil, tablet, desktop)
 - ♿ **Accesibilidad** (contraste, teclado, reduced motion)
-- ✨ **Animaciones sutiles** (scroll reveal, contadores, tilt 3D)
+- ✨ **Animaciones sutiles** (scroll reveal, tilt 3D, fondo aurora)
 - 💬 **Integración con WhatsApp** en 5 puntos de contacto
 
 ---

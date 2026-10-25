@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CR Fideliza — Fidelización para restaurantes y bares</title>
+<title>CR Fideliza — Fidelización digital para tu negocio</title>
+<meta name="description" content="CR Fideliza ayuda a los negocios a convertir clientes ocasionales en clientes recurrentes mediante programas de fidelización digitales, simples y personalizados.">
 <link rel="icon" type="image/png" sizes="512x512" href="images/cr-logo.png">
 <link rel="apple-touch-icon" href="images/cr-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -567,6 +568,34 @@
     padding-right: 40px;
     border-right: 1px solid var(--border);
   }
+  .hero-trust {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 40px;
+    animation: fadeUp .7s .32s var(--transition) both;
+  }
+  .hero-trust span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text-3);
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  .hero-trust span::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent-solid);
+    box-shadow: 0 0 8px var(--accent-solid);
+    flex-shrink: 0;
+  }
 
   /* ============================================================
      CARD MOCKUP
@@ -831,6 +860,13 @@
     position: relative;
     z-index: 2;
   }
+  .grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    position: relative;
+    z-index: 2;
+  }
   .feature-card {
     padding: 34px 28px;
     border-radius: var(--radius-lg);
@@ -886,6 +922,38 @@
     color: var(--text-3);
     font-size: 0.92rem;
   }
+  .benefit-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 26px 24px;
+    border-radius: var(--radius-md);
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-sm), var(--inset-highlight);
+    transition: transform .4s var(--transition), border-color .3s, box-shadow .4s;
+    position: relative;
+    overflow: hidden;
+  }
+  .benefit-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-strong);
+    box-shadow: var(--shadow-md);
+  }
+  .benefit-card .feature-icon {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    margin-bottom: 0;
+    border-radius: 11px;
+    font-size: 1.15rem;
+  }
+  .benefit-card p {
+    color: var(--text-2);
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin: 0;
+  }
 
   /* ============================================================
      CÓMO FUNCIONA
@@ -896,6 +964,10 @@
     gap: 36px;
     position: relative;
     z-index: 2;
+  }
+  .steps.steps-4 {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
   }
   .step {
     text-align: center;
@@ -1137,6 +1209,12 @@
     margin-left: auto;
     margin-right: auto;
   }
+  .cta-final .cta-note {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    margin-bottom: 0;
+    margin-top: -22px;
+  }
   .cta-buttons {
     display: flex;
     gap: 12px;
@@ -1225,6 +1303,12 @@
     color: var(--text);
     margin-bottom: 12px;
   }
+  footer .footer-tagline {
+    max-width: 640px;
+    margin: 0 auto 18px;
+    color: var(--text-3);
+    font-size: 0.92rem;
+  }
   footer .footer-logo span { color: var(--accent); }
   footer a {
     color: var(--text-2);
@@ -1244,6 +1328,11 @@
   /* ============================================================
      RESPONSIVE
      ============================================================ */
+  @media (max-width: 1100px) {
+    .grid-4 { grid-template-columns: repeat(2, 1fr); }
+    .steps.steps-4 { grid-template-columns: repeat(2, 1fr); }
+    .steps.steps-4 .step::after { display: none; }
+  }
   @media (max-width: 960px) {
     .hero {
       grid-template-columns: 1fr;
@@ -1255,8 +1344,9 @@
     .cta-group { justify-content: center; }
     .hero-stats { justify-content: center; }
     .hero-stat:not(:last-child) { padding-right: 24px; }
+    .hero-trust { justify-content: center; }
     .hero-visual { margin-top: 40px; }
-    .grid-3, .steps, .price-grid { grid-template-columns: 1fr; }
+    .grid-3, .grid-4, .steps, .steps.steps-4, .price-grid { grid-template-columns: 1fr; }
     .grid-2 { grid-template-columns: 1fr; }
     .price-card.featured { transform: none; }
     .price-card.featured:hover { transform: translateY(-5px); }
@@ -1897,8 +1987,10 @@
     <span class="logo-text"><b>CR</b> Fideliza</span>
   </div>
   <ul>
+    <li><a href="#negocios">Negocios</a></li>
     <li><a href="#features">Funciones</a></li>
     <li><a href="#how">Cómo funciona</a></li>
+    <li><a href="#beneficios">Beneficios</a></li>
     <li><a href="#pricing">Precios</a></li>
     <li>
       <a href="https://wa.me/595971927632?text=Hola%2C%20quiero%20probar%20CR%20Fideliza"
@@ -1920,10 +2012,10 @@
       Hecho en Paraguay
     </div>
     <h1>
-      Fideliza a tus clientes con <span class="accent">tarjeta virtual</span> en segundos
+      Haz que tus clientes vuelvan <span class="accent">una y otra vez.</span>
     </h1>
     <p>
-      CR Fideliza es el sistema de fidelización para restaurantes y bares que tus clientes guardan directamente en Apple Wallet o Google Wallet. Sin apps, sin tarjetas físicas, sin complicaciones.
+      Fideliza a tus clientes con tarjetas digitales de puntos, visitas y recompensas. Una solución simple para comercios, profesionales y negocios de servicios que quieren aumentar la recurrencia de sus clientes.
     </p>
     <div class="cta-group">
       <a href="https://wa.me/595971927632?text=Hola%2C%20quiero%20empezar%20con%20CR%20Fideliza"
@@ -1931,23 +2023,14 @@
          rel="noopener"
          class="btn-whatsapp">
         <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-        Escribinos por WhatsApp
+        Escríbenos por WhatsApp
       </a>
-      <a href="#how" class="btn-secondary">Ver cómo funciona</a>
+      <a href="#how" class="btn-secondary">Descubre cómo funciona</a>
     </div>
-    <div class="hero-stats">
-      <div class="hero-stat">
-        <div class="num" data-count="1200">0</div>
-        <div class="lbl">Clientes fidelizados</div>
-      </div>
-      <div class="hero-stat">
-        <div class="num" data-count="45">0</div>
-        <div class="lbl">Negocios activos</div>
-      </div>
-      <div class="hero-stat">
-        <div class="num" data-count="98">0</div>
-        <div class="lbl">% Satisfacción</div>
-      </div>
+    <div class="hero-trust">
+      <span>Tarjetas en Apple Wallet y Google Wallet</span>
+      <span>Sin apps que descargar</span>
+      <span>Programas simples y personalizados</span>
     </div>
   </div>
 
@@ -1956,8 +2039,8 @@
     <div class="notif-float">
       <div class="notif-icon">🎁</div>
       <div>
-        <strong>¡Premio desbloqueado!</strong>
-        <span>Postre gratis en tu próxima visita</span>
+        <strong>¡Recompensa desbloqueada!</strong>
+        <span>10% de descuento en tu próxima visita</span>
       </div>
     </div>
     <div class="card-mockup">
@@ -1988,50 +2071,95 @@
 <!-- MARQUEE -->
 <div class="marquee-wrap">
   <div class="marquee">
-    <span>Restaurantes</span><span>Bares</span><span>Cafeterías</span>
-    <span>Pizzerías</span><span>Sushi Bars</span><span>Food Trucks</span>
-    <span>Restaurantes</span><span>Bares</span><span>Cafeterías</span>
-    <span>Pizzerías</span><span>Sushi Bars</span><span>Food Trucks</span>
+    <span>Barberías</span><span>Peluquerías</span><span>Lavaderos</span>
+    <span>Detailing</span><span>Tiendas</span><span>Boutiques</span>
+    <span>Cafeterías</span><span>Restaurantes</span><span>Bares</span>
+    <span>Gimnasios</span><span>Estética</span><span>Servicios técnicos</span>
+    <span>Barberías</span><span>Peluquerías</span><span>Lavaderos</span>
+    <span>Detailing</span><span>Tiendas</span><span>Boutiques</span>
+    <span>Cafeterías</span><span>Restaurantes</span><span>Bares</span>
+    <span>Gimnasios</span><span>Estética</span><span>Servicios técnicos</span>
   </div>
 </div>
+
+<!-- PARA TODO TIPO DE NEGOCIO -->
+<section id="negocios">
+  <div class="section-title reveal">
+    <span class="section-eyebrow">Para todo tipo de negocio</span>
+    <h2>Un programa de fidelización para tu negocio.</h2>
+    <p>No importa qué vendas o qué servicio ofrezcas. CR Fideliza te ayuda a premiar a tus clientes por volver, incentivando nuevas visitas y compras recurrentes.</p>
+  </div>
+  <div class="grid-4">
+    <div class="feature-card reveal reveal-delay-1">
+      <div class="feature-icon">💈</div>
+      <h3>Barberías y peluquerías</h3>
+      <p>Tarjeta de visitas: al completar los sellos, tu cliente recibe un corte o servicio de regalo.</p>
+    </div>
+    <div class="feature-card reveal reveal-delay-2">
+      <div class="feature-icon">🚗</div>
+      <h3>Lavaderos y detailing</h3>
+      <p>Cada lavado suma puntos. Al llegar al objetivo, un lavado premium o detailing de cortesía.</p>
+    </div>
+    <div class="feature-card reveal reveal-delay-3">
+      <div class="feature-icon">🛍️</div>
+      <h3>Tiendas y boutiques</h3>
+      <p>Puntos por compra canjeables por descuentos, productos seleccionados o beneficios exclusivos.</p>
+    </div>
+    <div class="feature-card reveal reveal-delay-1">
+      <div class="feature-icon">☕</div>
+      <h3>Cafeterías y restaurantes</h3>
+      <p>Visitas o consumos acumulados para canjear un producto de cortesía y premiar la frecuencia.</p>
+    </div>
+    <div class="feature-card reveal reveal-delay-2">
+      <div class="feature-icon">🏋️</div>
+      <h3>Gimnasios y entrenamiento</h3>
+      <p>Clases o visitas acumuladas que se convierten en una sesión extra o un mes con descuento.</p>
+    </div>
+    <div class="feature-card reveal reveal-delay-3">
+      <div class="feature-icon">💅</div>
+      <h3>Estética y belleza</h3>
+      <p>Cada servicio suma. Al completar la tarjeta, tu cliente accede a un tratamiento de regalo.</p>
+    </div>
+    <div class="feature-card reveal reveal-delay-1">
+      <div class="feature-icon">🔧</div>
+      <h3>Servicios técnicos</h3>
+      <p>Visitas o servicios acumulados para el próximo mantenimiento con un beneficio especial.</p>
+    </div>
+    <div class="feature-card reveal reveal-delay-2">
+      <div class="feature-icon">🚀</div>
+      <h3>Emprendimientos</h3>
+      <p>Programas simples de sellos o puntos para premiar la recompra desde el primer día.</p>
+    </div>
+  </div>
+</section>
 
 <!-- FEATURES -->
 <section id="features">
   <div class="section-title reveal">
     <span class="section-eyebrow">Funciones</span>
-    <h2>Todo lo que necesitas para fidelizar</h2>
-    <p>Una plataforma pensada para bares y restaurantes que quieren que sus clientes vuelvan, sin complicarse con la tecnología.</p>
+    <h2>Todo lo que necesitas para fidelizar.</h2>
+    <p>Una plataforma diseñada para que implementar un programa de fidelización sea fácil, tanto para tu negocio como para tus clientes.</p>
   </div>
-  <div class="grid-3">
+  <div class="grid-4">
     <div class="feature-card reveal reveal-delay-1">
       <div class="feature-icon">📱</div>
-      <h3>Tarjeta virtual en el celular</h3>
-      <p>Tus clientes guardan la tarjeta en Apple Wallet o Google Wallet. Sin descargar apps, sin perder tarjetas físicas.</p>
+      <h3>Tarjetas digitales</h3>
+      <p>Tus clientes guardan su tarjeta de fidelización en Apple Wallet o Google Wallet, sin necesidad de llevar una tarjeta física.</p>
     </div>
     <div class="feature-card reveal reveal-delay-2">
       <div class="feature-icon">🎯</div>
-      <h3>Sellos y puntos automáticos</h3>
-      <p>Elige entre sellos por visita, puntos por consumo o cashback. Cada compra suma automáticamente.</p>
+      <h3>Premios por visitas</h3>
+      <p>Reconoce la frecuencia de tus clientes y ofréceles recompensas por alcanzar sus objetivos de visitas.</p>
     </div>
     <div class="feature-card reveal reveal-delay-3">
-      <div class="feature-icon">🔔</div>
-      <h3>Notificaciones push</h3>
-      <p>Avisa a tus clientes de promociones, cumpleaños o "te faltan 2 sellos para tu premio".</p>
+      <div class="feature-icon">✨</div>
+      <h3>Fidelización adaptada a tu negocio</h3>
+      <p>Crea una experiencia de fidelización alineada con tus productos, servicios y tipo de cliente.</p>
     </div>
     <div class="feature-card reveal reveal-delay-1">
-      <div class="feature-icon">📊</div>
-      <h3>Panel de control</h3>
-      <p>Consulta visitas, frecuencia, ticket medio y clientes inactivos desde cualquier dispositivo.</p>
-    </div>
-    <div class="feature-card reveal reveal-delay-2">
-      <div class="feature-icon">💳</div>
-      <h3>Compatible con tu POS</h3>
-      <p>Funciona junto a cualquier sistema de caja registradora. Sin hardware adicional.</p>
-    </div>
-    <div class="feature-card reveal reveal-delay-3">
-      <div class="feature-icon">🎁</div>
-      <h3>Recompensas flexibles</h3>
-      <p>Crea premios como "10% de descuento", "postre gratis" o "2x1 en cócteles" en minutos.</p>
+      <div class="feature-icon">🤝</div>
+      <h3>Experiencia simple</h3>
+      <p>Facilita el acceso a las tarjetas y reduce las barreras para que tus clientes participen en tu programa.</p>
     </div>
   </div>
 </section>
@@ -2040,55 +2168,63 @@
 <section id="how">
   <div class="section-title reveal">
     <span class="section-eyebrow">Cómo funciona</span>
-    <h2>En 3 pasos, sin fricción</h2>
-    <p>Desde el registro hasta la primera recompensa, en menos de lo que dura un café.</p>
+    <h2>Empieza a fidelizar en pocos pasos.</h2>
+    <p>Implementar tu programa es simple. Tus clientes solo necesitan su teléfono.</p>
   </div>
-  <div class="steps">
+  <div class="steps steps-4">
     <div class="step reveal reveal-delay-1">
       <div class="step-num">1</div>
-      <h3>El cliente escanea</h3>
-      <p>Tu cliente escanea un código QR en la mesa o en la caja y añade la tarjeta virtual a su wallet.</p>
+      <h3>Configura tu programa</h3>
+      <p>Define cómo quieres premiar a tus clientes y qué recompensa ofrecerás.</p>
     </div>
     <div class="step reveal reveal-delay-2">
       <div class="step-num">2</div>
-      <h3>Suma sellos o puntos</h3>
-      <p>Cada compra suma automáticamente. Tú o tu personal marcan el sello desde el panel o con un escaneo.</p>
+      <h3>Tus clientes se suman</h3>
+      <p>Compárteles el acceso a su tarjeta digital para que puedan guardarla en su teléfono.</p>
     </div>
     <div class="step reveal reveal-delay-3">
       <div class="step-num">3</div>
-      <h3>Canjea la recompensa</h3>
-      <p>Al completar la tarjeta, el cliente recibe su premio y tú fidelizas una visita más.</p>
+      <h3>Premia su fidelidad</h3>
+      <p>Registra sus visitas o compras según la modalidad habilitada en tu programa.</p>
+    </div>
+    <div class="step reveal reveal-delay-1">
+      <div class="step-num">4</div>
+      <h3>Incentiva que regresen</h3>
+      <p>Convierte las recompensas en un motivo para volver a elegir tu negocio.</p>
     </div>
   </div>
 </section>
 
-<!-- TARGETS -->
-<section>
+<!-- BENEFICIOS -->
+<section id="beneficios">
   <div class="section-title reveal">
-    <span class="section-eyebrow">Para tu negocio</span>
-    <h2>Pensado para tu tipo de negocio</h2>
-    <p>Da igual si tienes una cafetería, un bar de copas o una cadena de restaurantes.</p>
+    <span class="section-eyebrow">Beneficios</span>
+    <h2>Más motivos para volver. Más oportunidades para crecer.</h2>
   </div>
-  <div class="grid-2">
-    <div class="target-card reveal reveal-delay-1">
-      <span class="target-emoji">🍽️</span>
-      <h3>Restaurantes</h3>
-      <ul>
-        <li>Fideliza a clientes habituales del menú del día</li>
-        <li>Premia el ticket medio alto con cashback</li>
-        <li>Recupera clientes inactivos con notificaciones</li>
-        <li>Integración con tu sistema de reservas o POS</li>
-      </ul>
+  <div class="grid-3">
+    <div class="benefit-card reveal reveal-delay-1">
+      <div class="feature-icon">🔁</div>
+      <p>Incentiva las compras y visitas recurrentes.</p>
     </div>
-    <div class="target-card reveal reveal-delay-2">
-      <span class="target-emoji">🍸</span>
-      <h3>Bares y cafeterías</h3>
-      <ul>
-        <li>Tarjetas de sellos para "el café de la mañana"</li>
-        <li>Promociones de happy hour segmentadas</li>
-        <li>Programa de cumpleaños automático</li>
-        <li>Sin tarjetas físicas que se pierden</li>
-      </ul>
+    <div class="benefit-card reveal reveal-delay-2">
+      <div class="feature-icon">🎁</div>
+      <p>Premia a quienes eligen tu negocio.</p>
+    </div>
+    <div class="benefit-card reveal reveal-delay-3">
+      <div class="feature-icon">💳</div>
+      <p>Ofrece una experiencia de fidelización moderna.</p>
+    </div>
+    <div class="benefit-card reveal reveal-delay-1">
+      <div class="feature-icon">🚫</div>
+      <p>Evita depender de tarjetas físicas.</p>
+    </div>
+    <div class="benefit-card reveal reveal-delay-2">
+      <div class="feature-icon">🏆</div>
+      <p>Diferénciate de tus competidores.</p>
+    </div>
+    <div class="benefit-card reveal reveal-delay-3">
+      <div class="feature-icon">🤝</div>
+      <p>Fortalece la relación con tus clientes.</p>
     </div>
   </div>
 </section>
@@ -2142,27 +2278,25 @@
 
 <!-- CTA FINAL -->
 <section class="cta-final" id="contacto">
-  <h2 class="reveal">¿Listo para que tus clientes <span class="accent">vuelvan</span>?</h2>
-  <p class="reveal reveal-delay-1">Escribinos por WhatsApp para una demo personalizada, o déjanos tu email y te contactamos nosotros.</p>
+  <h2 class="reveal">Tus próximos clientes frecuentes <span class="accent">empiezan hoy.</span></h2>
+  <p class="reveal reveal-delay-1">Implementa un programa de fidelización digital adaptado a tu negocio y empieza a darles a tus clientes más motivos para volver.</p>
   <div class="cta-buttons reveal reveal-delay-2">
-    <a href="https://wa.me/595971927632?text=Hola%2C%20quiero%20una%20demo%20de%20CR%20Fideliza"
+    <a href="https://wa.me/595971927632?text=Hola%2C%20quiero%20fidelizar%20a%20mis%20clientes%20con%20CR%20Fideliza"
        target="_blank"
        rel="noopener"
        class="cta-wa-btn">
       <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-      Escribinos por WhatsApp
+      Quiero fidelizar a mis clientes
     </a>
   </div>
-  <form class="reveal reveal-delay-3" onsubmit="event.preventDefault(); this.querySelector('button').textContent='¡Enviado! ✓';">
-    <input type="email" placeholder="tu@email.com" required>
-    <button type="submit">Quiero mi demo</button>
-  </form>
+  <p class="cta-note reveal reveal-delay-3">Escríbenos y descubre qué programa de fidelización se adapta mejor a tu negocio.</p>
 </section>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo"><span>CR</span> Fideliza</div>
-  <p>© 2025 CR Fideliza — Hecho en Paraguay.</p>
+  <p class="footer-tagline">CR Fideliza ayuda a los negocios a convertir clientes ocasionales en clientes recurrentes mediante programas de fidelización digitales, simples y personalizados.</p>
+  <p>© 2026 CR Fideliza — Hecho en Paraguay.</p>
   <p style="margin-top:10px;">
     <a href="#">Términos</a> · <a href="#">Privacidad</a> · 
     <a href="https://wa.me/595971927632" target="_blank" rel="noopener" class="wa-link">
