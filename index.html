@@ -912,6 +912,23 @@
     transform: translateY(-2px);
     border-color: var(--accent-solid);
   }
+  .feature-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 16px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 16px;
+    background: var(--surface-2);
+    border: 1px solid var(--border-strong);
+    box-shadow: var(--inset-highlight), 0 10px 24px -14px var(--glow);
+    transition: transform .4s var(--transition), border-color .3s, box-shadow .4s;
+  }
+  .feature-card:hover .feature-img {
+    transform: translateY(-3px) scale(1.04);
+    border-color: var(--accent-solid);
+    box-shadow: var(--inset-highlight), 0 14px 30px -14px var(--glow);
+  }
   .feature-card h3 {
     font-size: 1.1rem;
     margin-bottom: 8px;
@@ -953,6 +970,28 @@
     font-size: 0.95rem;
     font-weight: 500;
     margin: 0;
+  }
+  .benefit-img {
+    width: 110px;
+    height: 110px;
+    border-radius: 20px;
+    object-fit: cover;
+    flex-shrink: 0;
+    background: var(--surface-2);
+    border: 1px solid var(--border-strong);
+    box-shadow: var(--inset-highlight), 0 12px 28px -14px var(--glow);
+    transition: transform .4s var(--transition), border-color .3s, box-shadow .4s;
+    animation: floatImg 5s ease-in-out infinite;
+  }
+  .benefit-card:hover .benefit-img {
+    transform: translateY(-4px) scale(1.08);
+    border-color: var(--accent-solid);
+    box-shadow: var(--inset-highlight), 0 16px 34px -14px var(--glow);
+    animation-play-state: paused;
+  }
+  @keyframes floatImg {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
   }
 
   /* ============================================================
@@ -1135,6 +1174,13 @@
     font-size: 0.8rem;
     color: var(--text-3);
     font-weight: 500;
+  }
+  .price-trial {
+    font-size: 0.85rem;
+    color: var(--accent-solid);
+    font-weight: 600;
+    margin: 6px 0 14px;
+    display: block;
   }
   .price-card ul {
     list-style: none;
@@ -2091,42 +2137,42 @@
   </div>
   <div class="grid-4">
     <div class="feature-card reveal reveal-delay-1">
-      <div class="feature-icon">💈</div>
+      <img src="images/Barberia.jpg" alt="Barberías y peluquerías" class="feature-img" width="90" height="90" loading="lazy">
       <h3>Barberías y peluquerías</h3>
       <p>Tarjeta de visitas: al completar los sellos, tu cliente recibe un corte o servicio de regalo.</p>
     </div>
     <div class="feature-card reveal reveal-delay-2">
-      <div class="feature-icon">🚗</div>
+      <img src="images/Lavadero.jpg" alt="Lavaderos y detailing" class="feature-img" width="90" height="90" loading="lazy">
       <h3>Lavaderos y detailing</h3>
       <p>Cada lavado suma puntos. Al llegar al objetivo, un lavado premium o detailing de cortesía.</p>
     </div>
     <div class="feature-card reveal reveal-delay-3">
-      <div class="feature-icon">🛍️</div>
+      <img src="images/Boutique.jpg" alt="Tiendas y boutiques" class="feature-img" width="90" height="90" loading="lazy">
       <h3>Tiendas y boutiques</h3>
       <p>Puntos por compra canjeables por descuentos, productos seleccionados o beneficios exclusivos.</p>
     </div>
     <div class="feature-card reveal reveal-delay-1">
-      <div class="feature-icon">☕</div>
+      <img src="images/Restaurant.jpg" alt="Cafeterías y restaurantes" class="feature-img" width="90" height="90" loading="lazy">
       <h3>Cafeterías y restaurantes</h3>
       <p>Visitas o consumos acumulados para canjear un producto de cortesía y premiar la frecuencia.</p>
     </div>
     <div class="feature-card reveal reveal-delay-2">
-      <div class="feature-icon">🏋️</div>
+      <img src="images/Gimnasio.jpg" alt="Gimnasios y entrenamiento" class="feature-img" width="90" height="90" loading="lazy">
       <h3>Gimnasios y entrenamiento</h3>
       <p>Clases o visitas acumuladas que se convierten en una sesión extra o un mes con descuento.</p>
     </div>
     <div class="feature-card reveal reveal-delay-3">
-      <div class="feature-icon">💅</div>
+      <img src="images/Estetica.jpg" alt="Estética y belleza" class="feature-img" width="90" height="90" loading="lazy">
       <h3>Estética y belleza</h3>
       <p>Cada servicio suma. Al completar la tarjeta, tu cliente accede a un tratamiento de regalo.</p>
     </div>
     <div class="feature-card reveal reveal-delay-1">
-      <div class="feature-icon">🔧</div>
+      <img src="images/Servicios tecnicos.jpg" alt="Servicios técnicos" class="feature-img" width="90" height="90" loading="lazy">
       <h3>Servicios técnicos</h3>
       <p>Visitas o servicios acumulados para el próximo mantenimiento con un beneficio especial.</p>
     </div>
     <div class="feature-card reveal reveal-delay-2">
-      <div class="feature-icon">🚀</div>
+      <img src="images/Emprendimiento.jpeg" alt="Emprendimientos" class="feature-img" width="90" height="90" loading="lazy">
       <h3>Emprendimientos</h3>
       <p>Programas simples de sellos o puntos para premiar la recompra desde el primer día.</p>
     </div>
@@ -2142,22 +2188,22 @@
   </div>
   <div class="grid-4">
     <div class="feature-card reveal reveal-delay-1">
-      <div class="feature-icon">📱</div>
+      <img src="images/Tarjeta Digital.jpg" alt="Tarjetas digitales" class="feature-img" width="100" height="100" loading="lazy">
       <h3>Tarjetas digitales</h3>
       <p>Tus clientes guardan su tarjeta de fidelización en Apple Wallet o Google Wallet, sin necesidad de llevar una tarjeta física.</p>
     </div>
     <div class="feature-card reveal reveal-delay-2">
-      <div class="feature-icon">🎯</div>
+      <img src="images/Premios por visitas.jpg" alt="Premios por visitas" class="feature-img" width="100" height="100" loading="lazy">
       <h3>Premios por visitas</h3>
       <p>Reconoce la frecuencia de tus clientes y ofréceles recompensas por alcanzar sus objetivos de visitas.</p>
     </div>
     <div class="feature-card reveal reveal-delay-3">
-      <div class="feature-icon">✨</div>
+      <img src="images/Al pelo negocio.jpg" alt="Fidelización adaptada a tu negocio" class="feature-img" width="100" height="100" loading="lazy">
       <h3>Fidelización adaptada a tu negocio</h3>
       <p>Crea una experiencia de fidelización alineada con tus productos, servicios y tipo de cliente.</p>
     </div>
     <div class="feature-card reveal reveal-delay-1">
-      <div class="feature-icon">🤝</div>
+      <img src="images/Estadistica subida.jpg" alt="Experiencia simple" class="feature-img" width="100" height="100" loading="lazy">
       <h3>Experiencia simple</h3>
       <p>Facilita el acceso a las tarjetas y reduce las barreras para que tus clientes participen en tu programa.</p>
     </div>
@@ -2203,27 +2249,27 @@
   </div>
   <div class="grid-3">
     <div class="benefit-card reveal reveal-delay-1">
-      <div class="feature-icon">🔁</div>
+      <img src="images/Compras y visitas recurrentes.jpg" alt="Compras y visitas recurrentes" class="benefit-img" width="110" height="110" loading="lazy">
       <p>Incentiva las compras y visitas recurrentes.</p>
     </div>
     <div class="benefit-card reveal reveal-delay-2">
-      <div class="feature-icon">🎁</div>
+      <img src="images/Regalos.jpg" alt="Premia a tus clientes" class="benefit-img" width="110" height="110" loading="lazy">
       <p>Premia a quienes eligen tu negocio.</p>
     </div>
     <div class="benefit-card reveal reveal-delay-3">
-      <div class="feature-icon">💳</div>
+      <img src="images/Fidelizacion.jpg" alt="Experiencia moderna" class="benefit-img" width="110" height="110" loading="lazy">
       <p>Ofrece una experiencia de fidelización moderna.</p>
     </div>
     <div class="benefit-card reveal reveal-delay-1">
-      <div class="feature-icon">🚫</div>
+      <img src="images/No Tarjetas.jpg" alt="Sin tarjetas físicas" class="benefit-img" width="110" height="110" loading="lazy">
       <p>Evita depender de tarjetas físicas.</p>
     </div>
     <div class="benefit-card reveal reveal-delay-2">
-      <div class="feature-icon">🏆</div>
+      <img src="images/Competidor.jpg" alt="Diferénciate de competidores" class="benefit-img" width="110" height="110" loading="lazy">
       <p>Diferénciate de tus competidores.</p>
     </div>
     <div class="benefit-card reveal reveal-delay-3">
-      <div class="feature-icon">🤝</div>
+      <img src="images/Cliente.jpg" alt="Relación con clientes" class="benefit-img" width="110" height="110" loading="lazy">
       <p>Fortalece la relación con tus clientes.</p>
     </div>
   </div>
@@ -2239,14 +2285,15 @@
   <div class="price-grid">
     <div class="price-card reveal reveal-delay-1">
       <h3>Starter</h3>
-      <div class="price">Gratis</div>
+      <div class="price">99.000 Gs <small>/mes</small></div>
+      <p class="price-trial">30 días gratis</p>
       <ul>
         <li>Hasta 100 clientes</li>
         <li>1 tarjeta de sellos</li>
         <li>Apple & Google Wallet</li>
         <li>Panel básico</li>
       </ul>
-      <button>Empezar gratis</button>
+      <button>Empezar prueba gratis</button>
     </div>
     <div class="price-card featured reveal reveal-delay-2">
       <div class="price-badge">Más popular</div>
