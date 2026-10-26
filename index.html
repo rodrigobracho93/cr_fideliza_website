@@ -2358,11 +2358,14 @@
   const root = document.documentElement;
   const toggle = document.getElementById('themeToggle');
   const savedTheme = localStorage.getItem('crfideliza-theme');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const hour = new Date().getHours();
+  const isNight = hour >= 19 || hour < 7;
 
   if (savedTheme) {
     root.setAttribute('data-theme', savedTheme);
-  } else if (!prefersDark) {
+  } else if (isNight) {
+    root.setAttribute('data-theme', 'dark');
+  } else {
     root.setAttribute('data-theme', 'light');
   }
 
