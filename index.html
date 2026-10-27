@@ -128,30 +128,8 @@
     overflow: hidden;
     pointer-events: none;
   }
-  .bg-grid {
-    position: absolute;
-    inset: -50%;
-    background-image:
-      linear-gradient(var(--grid-color) 1px, transparent 1px),
-      linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
-    background-size: 64px 64px;
-    animation: gridMove 120s linear infinite;
-    mask-image: radial-gradient(ellipse at center, #000 20%, transparent 80%);
-    -webkit-mask-image: radial-gradient(ellipse at center, #000 20%, transparent 80%);
-    will-change: transform;
-  }
-  @keyframes gridMove {
-    from { transform: translate(0, 0); }
-    to { transform: translate(64px, 64px); }
-  }
-  .bg-metal {
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(1000px 600px at 20% 0%, rgba(20, 184, 166, 0.06), transparent 70%),
-      radial-gradient(800px 500px at 90% 100%, rgba(2, 132, 199, 0.05), transparent 70%);
-    opacity: 0.9;
-  }
+  .bg-grid { display: none; }
+  .bg-metal { display: none; }
 
   /* ============================================================
      ANIMACIONES
@@ -1425,29 +1403,24 @@
   }
 
   /* ============================================================
-     CAPA VISUAL FUTURISTA (AURORA + VIDRIO)
+     CAPA VISUAL FUTURISTA (OPTIMIZADA)
      ============================================================ */
   [data-theme="dark"] {
-    --tint-1: rgba(163, 182, 255, 0.16);
-    --tint-2: rgba(147, 226, 232, 0.07);
-    --ring: rgba(163, 182, 255, 0.22);
+    --tint-1: rgba(163, 182, 255, 0.12);
+    --tint-2: rgba(147, 226, 232, 0.05);
+    --ring: rgba(163, 182, 255, 0.18);
   }
   [data-theme="light"] {
-    --tint-1: rgba(76, 99, 204, 0.10);
-    --tint-2: rgba(63, 142, 160, 0.05);
-    --ring: rgba(76, 99, 204, 0.22);
+    --tint-1: rgba(76, 99, 204, 0.08);
+    --tint-2: rgba(63, 142, 160, 0.04);
+    --ring: rgba(76, 99, 204, 0.18);
   }
 
   html { scroll-padding-top: 96px; }
 
   body {
     font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
-    background:
-      radial-gradient(1200px 800px at 10% -10%, var(--aurora-1), transparent 60%),
-      radial-gradient(1100px 750px at 92% 6%, var(--aurora-3), transparent 62%),
-      radial-gradient(1200px 900px at 50% 112%, var(--aurora-2), transparent 60%),
-      var(--bg);
-    background-attachment: scroll;
+    background: var(--bg);
   }
 
   h1, h2, h3, .logo, .price, .step-num, .hero-stat .num, .section-eyebrow, .price-badge {
@@ -1455,55 +1428,12 @@
   }
 
   /* Textura de grano muy sutil */
-  .bg-futuristic::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
-    opacity: 0.02;
-    mix-blend-mode: overlay;
-    pointer-events: none;
-  }
+  .bg-futuristic::after { display: none; }
 
-  .bg-grid {
-    background-size: 48px 48px;
-    animation: gridDrift 120s linear infinite;
-  }
-  @keyframes gridDrift {
-    from { transform: translate3d(0, 0, 0); }
-    to { transform: translate3d(-48px, -48px, 0); }
-  }
-
-  .bg-metal {
-    background: none;
-    opacity: 1;
-  }
+  .bg-grid { display: none; }
+  .bg-metal { display: none; }
   .bg-metal::before,
-  .bg-metal::after {
-    content: "";
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(90px);
-    will-change: transform;
-  }
-  .bg-metal::before {
-    width: 58vw;
-    height: 58vw;
-    left: -12%;
-    top: -22%;
-    background: radial-gradient(circle, var(--aurora-1), transparent 66%);
-    animation: auroraA 90s ease-in-out infinite alternate;
-    will-change: transform;
-  }
-  .bg-metal::after {
-    width: 52vw;
-    height: 52vw;
-    right: -14%;
-    bottom: -26%;
-    background: radial-gradient(circle, var(--aurora-2), transparent 66%);
-    animation: auroraB 110s ease-in-out infinite alternate;
-    will-change: transform;
-  }
+  .bg-metal::after { display: none; }
   @keyframes auroraA {
     from { transform: translate3d(0, 0, 0) scale(1); }
     to { transform: translate3d(7%, 5%, 0) scale(1.18); }
@@ -1704,42 +1634,15 @@
   }
 
   /* MOCKUP / TARJETA HERO */
-  .hero-visual::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    margin: auto;
-    width: 560px;
-    height: 560px;
-    border-radius: 50%;
-    background: radial-gradient(circle, var(--glow), transparent 62%);
-    filter: blur(10px);
-    z-index: 0;
-    pointer-events: none;
-  }
-  .hero-visual::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    margin: auto;
-    width: 580px;
-    height: 580px;
-    border-radius: 50%;
-    border: 1px dashed var(--ring);
-    opacity: 0.55;
-    animation: ringSpin 60s linear infinite;
-    z-index: 0;
-    pointer-events: none;
-  }
+  .hero-visual::before,
+  .hero-visual::after { display: none; }
   @keyframes ringSpin { to { transform: rotate(360deg); } }
 
   .card-mockup {
     z-index: 2;
-    background:
-      linear-gradient(155deg, var(--tint-1) 0%, var(--tint-2) 42%, transparent 72%),
-      linear-gradient(150deg, rgba(24,32,48,0.96) 0%, rgba(9,13,22,0.98) 100%);
+    background: linear-gradient(150deg, rgba(24,32,48,0.96) 0%, rgba(9,13,22,0.98) 100%);
     border: 1px solid var(--ring);
-    box-shadow: 0 44px 90px -34px rgba(0,0,0,0.85), var(--inset-highlight);
+    box-shadow: 0 30px 70px -30px rgba(0,0,0,0.8), var(--inset-highlight);
   }
   [data-theme="light"] .card-mockup {
     background:
@@ -1752,7 +1655,6 @@
     height: 3px;
     border-radius: 3px;
     background: var(--accent-grad);
-    box-shadow: 0 0 12px var(--glow);
   }
   .card-mockup:hover {
     border-color: var(--accent);
@@ -1787,7 +1689,7 @@
   }
   .marquee-wrap::before { background: linear-gradient(90deg, var(--bg-2), transparent); }
   .marquee-wrap::after { background: linear-gradient(-90deg, var(--bg-2), transparent); }
-  .marquee { animation-duration: 40s; }
+  .marquee { animation-duration: 60s; }
   .marquee span { color: var(--text-muted); letter-spacing: 0.6px; }
   .marquee span::before { color: var(--accent); font-size: 0.55rem; }
 
@@ -1825,17 +1727,7 @@
   }
   .feature-card::after,
   .target-card::after,
-  .price-card::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    border-radius: inherit;
-    background: radial-gradient(300px circle at var(--mx, 50%) var(--my, 0%), var(--glow), transparent 62%);
-    opacity: 0;
-    transition: opacity .45s var(--transition);
-    pointer-events: none;
-  }
+  .price-card::after { display: none; }
   .feature-card:hover::after,
   .target-card:hover::after,
   .price-card:hover::after { opacity: 1; }
@@ -1882,9 +1774,7 @@
   /* PRICING */
   .price-card.featured {
     border-color: transparent;
-    background:
-      linear-gradient(180deg, var(--tint-1) 0%, transparent 55%),
-      var(--card-bg);
+    background: var(--card-bg);
     box-shadow:
       0 0 0 1px var(--accent-solid),
       0 30px 70px -30px var(--glow),
@@ -1924,11 +1814,7 @@
     padding: 90px 8%;
     border-radius: 34px;
     border: 1px solid var(--border);
-    background:
-      radial-gradient(700px 340px at 50% -10%, var(--glow), transparent 70%),
-      radial-gradient(620px 320px at 88% 108%, var(--glow-2), transparent 70%),
-      var(--card-bg),
-      var(--bg-2);
+    background: var(--card-bg), var(--bg-2);
     box-shadow: var(--shadow-lg), var(--inset-highlight);
     overflow: hidden;
   }
@@ -1958,12 +1844,12 @@
   }
   a:focus-visible { border-radius: 6px; }
 
-  ::-webkit-scrollbar { width: 11px; }
+  ::-webkit-scrollbar { width: 10px; }
   ::-webkit-scrollbar-track { background: var(--bg); }
   ::-webkit-scrollbar-thumb {
     background: var(--border-strong);
-    border: 3px solid var(--bg);
-    border-radius: 10px;
+    border: 2px solid var(--bg);
+    border-radius: 8px;
   }
   ::-webkit-scrollbar-thumb:hover { background: var(--steel); }
 
@@ -1983,15 +1869,6 @@
 </style>
 </head>
 <body>
-
-<!-- PROGRESO DE LECTURA -->
-<div class="scroll-progress" aria-hidden="true"></div>
-
-<!-- FONDO SUTIL -->
-<div class="bg-futuristic">
-  <div class="bg-grid"></div>
-  <div class="bg-metal"></div>
-</div>
 
 <!-- BOTONES FLOTANTES (theme + whatsapp) -->
 <div class="float-buttons">
@@ -2413,39 +2290,45 @@
   /* TILT 3D */
   const card = document.querySelector('.card-mockup');
   const heroVisual = document.querySelector('.hero-visual');
-  if (card && heroVisual) {
+  if (card && heroVisual && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
     heroVisual.addEventListener('mousemove', (e) => {
       const rect = heroVisual.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width - 0.5;
       const y = (e.clientY - rect.top) / rect.height - 0.5;
-      card.style.transform = `rotateY(${x * 14}deg) rotateX(${-y * 14}deg) rotate(0deg)`;
+      card.style.transform = `rotateY(${x * 10}deg) rotateX(${-y * 10}deg) rotate(0deg)`;
       card.style.animationPlayState = 'paused';
     });
     heroVisual.addEventListener('mouseleave', () => {
       card.style.transform = '';
       card.style.animationPlayState = 'running';
     });
+  } else if (card) {
+    card.style.animationPlayState = 'running';
   }
 
   /* PROGRESO DE LECTURA */
   const progressBar = document.querySelector('.scroll-progress');
-  const updateProgress = () => {
-    const doc = document.documentElement;
-    const max = doc.scrollHeight - doc.clientHeight;
-    progressBar.style.transform = `scaleX(${max > 0 ? doc.scrollTop / max : 0})`;
-  };
-  window.addEventListener('scroll', updateProgress, { passive: true });
-  window.addEventListener('resize', updateProgress);
-  updateProgress();
+  if (progressBar) {
+    const updateProgress = () => {
+      const doc = document.documentElement;
+      const max = doc.scrollHeight - doc.clientHeight;
+      progressBar.style.transform = `scaleX(${max > 0 ? doc.scrollTop / max : 0})`;
+    };
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    window.addEventListener('resize', updateProgress);
+    updateProgress();
+  }
 
   /* FOCO LUMINOSO EN TARJETAS */
-  document.querySelectorAll('.feature-card, .target-card, .price-card').forEach(el => {
-    el.addEventListener('mousemove', (e) => {
-      const r = el.getBoundingClientRect();
-      el.style.setProperty('--mx', `${e.clientX - r.left}px`);
-      el.style.setProperty('--my', `${e.clientY - r.top}px`);
+  if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+    document.querySelectorAll('.feature-card, .target-card, .price-card').forEach(el => {
+      el.addEventListener('mousemove', (e) => {
+        const r = el.getBoundingClientRect();
+        el.style.setProperty('--mx', `${e.clientX - r.left}px`);
+        el.style.setProperty('--my', `${e.clientY - r.top}px`);
+      }, { passive: true });
     });
-  });
+  }
 </script>
 </body>
 </html>
