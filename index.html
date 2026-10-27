@@ -285,13 +285,18 @@
     position: sticky;
     top: 0;
     z-index: 100;
-    background: var(--nav-bg);
+    background: var(--bg);
     border-bottom: 1px solid var(--border);
     padding: 16px 6%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     transition: padding .3s, background .5s, border-color .5s;
+  }
+  nav.scrolled {
+    padding: 10px 6%;
+    background: var(--bg);
+    box-shadow: var(--shadow-sm);
   }
   nav.scrolled {
     padding: 11px 6%;
@@ -1462,10 +1467,11 @@
   nav {
     padding: 14px 6%;
     border-bottom: 1px solid var(--border);
+    background: var(--bg);
   }
   nav.scrolled {
     padding: 10px 6%;
-    background: var(--nav-bg);
+    background: var(--bg);
     box-shadow: 0 8px 30px -18px rgba(0,0,0,0.5);
   }
   .logo-mark {
