@@ -308,8 +308,8 @@
     top: 0;
     z-index: 100;
     background: var(--nav-bg);
-    backdrop-filter: blur(16px) saturate(140%);
-    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    backdrop-filter: blur(10px) saturate(120%);
+    -webkit-backdrop-filter: blur(10px) saturate(120%);
     border-bottom: 1px solid var(--border);
     padding: 16px 6%;
     display: flex;
@@ -1449,7 +1449,7 @@
       radial-gradient(1100px 750px at 92% 6%, var(--aurora-3), transparent 62%),
       radial-gradient(1200px 900px at 50% 112%, var(--aurora-2), transparent 60%),
       var(--bg);
-    background-attachment: fixed;
+    background-attachment: scroll;
   }
 
   h1, h2, h3, .logo, .price, .step-num, .hero-stat .num, .section-eyebrow, .price-badge {
@@ -1461,15 +1461,15 @@
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
-    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+    opacity: 0.02;
     mix-blend-mode: overlay;
     pointer-events: none;
   }
 
   .bg-grid {
     background-size: 48px 48px;
-    animation: gridDrift 70s linear infinite;
+    animation: gridDrift 120s linear infinite;
   }
   @keyframes gridDrift {
     from { transform: translate3d(0, 0, 0); }
@@ -1494,7 +1494,7 @@
     left: -12%;
     top: -22%;
     background: radial-gradient(circle, var(--aurora-1), transparent 66%);
-    animation: auroraA 40s ease-in-out infinite alternate;
+    animation: auroraA 90s ease-in-out infinite alternate;
     will-change: transform;
   }
   .bg-metal::after {
@@ -1503,7 +1503,7 @@
     right: -14%;
     bottom: -26%;
     background: radial-gradient(circle, var(--aurora-2), transparent 66%);
-    animation: auroraB 50s ease-in-out infinite alternate;
+    animation: auroraB 110s ease-in-out infinite alternate;
     will-change: transform;
   }
   @keyframes auroraA {
@@ -1585,8 +1585,6 @@
     background: var(--surface-2);
     border: 1px solid var(--border-strong);
     border-radius: 999px;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
   }
   .badge-dot {
     background: var(--accent);
@@ -1658,8 +1656,6 @@
   .btn-secondary {
     background: var(--surface-2);
     border: 1px solid var(--border-strong);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
   }
   .btn-secondary:hover {
     border-color: var(--ring);
@@ -1698,8 +1694,6 @@
     border-radius: 14px;
     background: var(--surface-2);
     border-color: var(--border-strong);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
   }
   .theme-toggle:hover {
     border-color: var(--ring);
@@ -1707,8 +1701,6 @@
   }
   .whatsapp-float::before {
     background: var(--surface-2);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
     border-color: var(--border-strong);
     border-radius: 10px;
   }
@@ -1782,8 +1774,6 @@
   .notif-float {
     background: var(--surface-2);
     border-color: var(--border-strong);
-    backdrop-filter: blur(14px) saturate(150%);
-    -webkit-backdrop-filter: blur(14px) saturate(150%);
   }
   .notif-icon {
     background: var(--accent-grad);
@@ -1812,8 +1802,6 @@
     background: var(--surface-2);
     border: 1px solid var(--border);
     color: var(--accent);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
   }
   .section-eyebrow::before {
     content: "";
@@ -1830,11 +1818,10 @@
   /* TARJETAS CON VIDRIO Y FOCO */
   .feature-card,
   .target-card,
-  .price-card {
+  .price-card,
+  .benefit-card {
     background: var(--card-bg);
     border: 1px solid var(--border);
-    backdrop-filter: blur(12px) saturate(120%);
-    -webkit-backdrop-filter: blur(12px) saturate(120%);
     box-shadow: var(--shadow-sm), var(--inset-highlight);
     isolation: isolate;
   }
