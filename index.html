@@ -135,9 +135,10 @@
       linear-gradient(var(--grid-color) 1px, transparent 1px),
       linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
     background-size: 64px 64px;
-    animation: gridMove 60s linear infinite;
+    animation: gridMove 120s linear infinite;
     mask-image: radial-gradient(ellipse at center, #000 20%, transparent 80%);
     -webkit-mask-image: radial-gradient(ellipse at center, #000 20%, transparent 80%);
+    will-change: transform;
   }
   @keyframes gridMove {
     from { transform: translate(0, 0); }
@@ -790,7 +791,8 @@
     display: flex;
     gap: 52px;
     width: max-content;
-    animation: marquee 34s linear infinite;
+    animation: marquee 50s linear infinite;
+    will-change: transform;
   }
   .marquee span {
     font-size: 0.95rem;
@@ -815,6 +817,8 @@
     padding: 100px 6%;
     position: relative;
     overflow: hidden;
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 1000px;
   }
   .section-title {
     text-align: center;
@@ -1490,7 +1494,8 @@
     left: -12%;
     top: -22%;
     background: radial-gradient(circle, var(--aurora-1), transparent 66%);
-    animation: auroraA 28s ease-in-out infinite alternate;
+    animation: auroraA 40s ease-in-out infinite alternate;
+    will-change: transform;
   }
   .bg-metal::after {
     width: 52vw;
@@ -1498,7 +1503,8 @@
     right: -14%;
     bottom: -26%;
     background: radial-gradient(circle, var(--aurora-2), transparent 66%);
-    animation: auroraB 34s ease-in-out infinite alternate;
+    animation: auroraB 50s ease-in-out infinite alternate;
+    will-change: transform;
   }
   @keyframes auroraA {
     from { transform: translate3d(0, 0, 0) scale(1); }
@@ -1789,6 +1795,7 @@
   .marquee-wrap {
     background: var(--bg-2);
     border-color: var(--border);
+    will-change: transform;
   }
   .marquee-wrap::before { background: linear-gradient(90deg, var(--bg-2), transparent); }
   .marquee-wrap::after { background: linear-gradient(-90deg, var(--bg-2), transparent); }
