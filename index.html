@@ -1436,6 +1436,21 @@
   body {
     font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
     background: var(--bg);
+    position: relative;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+    background-image:
+      linear-gradient(var(--grid-color) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.45;
+    mask-image: radial-gradient(ellipse at center, #000 30%, transparent 85%);
+    -webkit-mask-image: radial-gradient(ellipse at center, #000 30%, transparent 85%);
   }
 
   h1, h2, h3, .logo, .price, .step-num, .hero-stat .num, .section-eyebrow, .price-badge {
